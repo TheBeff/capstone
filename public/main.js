@@ -17,6 +17,6 @@ app.controller('MainCtrl', function($scope){
 		readOnly: "nocursor"
 	};
 
-	$scope.code = "function foo(){\n  return 'bar';\n}"
+	$scope.code = "function foo(){\n  return 'bar';\n}";
 	$scope.testCode = "var assert = require('assert');\n\ndescribe('foo', function(){\n  it ('should return bar', function(){\n    assert.deepEqual(foo(), 'bar');\n  });\n});";
 });
