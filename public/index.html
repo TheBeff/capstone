@@ -13,9 +13,15 @@
 </head>	
 <body ng-app="app" ng-controller="MainCtrl">
   <div class="container">
-    <h1>Welcome</h1>
-    <ui-codemirror ui-codemirror-opts="codeEditorOptions" ng-model="code"></ui-codemirror>
-    <ui-codemirror ui-codemirror-opts="testEditorOptions" ng-model="testCode"></ui-codemirror>
+    <h2>The Code</h2>
+    <div class="well">
+      <ui-codemirror ui-codemirror-opts="codeEditorOptions" ng-model="code"></ui-codemirror>
+    </div>
+    <h2>Write tests here:</h2>
+    <div class="well">
+      <ui-codemirror ui-codemirror-opts="testEditorOptions" ng-model="testCode"></ui-codemirror>
+      <br clear="all">
+    </div>
     <input class="btn btn-primary" type="submit" ng-click="submit(testCode)"></input>
   </div>
 </body>

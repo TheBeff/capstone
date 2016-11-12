@@ -3,7 +3,7 @@ const app = angular.module('app', ['ui.router','ui.codemirror']);
 app.controller('MainCtrl', function($scope){
 
 	$scope.submit = function(value){
-		console.log(value);
+		console.log($scope.code + "\n\n" + value);
 	};
 
 	$scope.testEditorOptions = {
