@@ -3,6 +3,7 @@
 <head>
   <script src="/angular/angular.js"></script>
   <script src="/angular-ui-router/release/angular-ui-router.js" defer></script>
+  <script src="/angular-ui-codemirror/src/ui-codemirror.js"></script>
   <script src="/main.js"></script>
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" />
   <script type="text/javascript" src="/codemirror-5.20.2/lib/codemirror.js"></script>
@@ -10,21 +11,12 @@
   <script src="/codemirror-5.20.2/mode/javascript/javascript.js"></script>
   <title>Development-driven Tests</title>
 </head>	
-<body ng-app="app">
+<body ng-app="app" ng-controller="MainCtrl">
   <div class="container">
     <h1>Welcome</h1>
-    <textarea id="repl" autofocus="true"></textarea>
-    <form name="testText">
-      <textarea id="repl2" autofocus="true"></textarea>
-      <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
+    <ui-codemirror ui-codemirror-opts="codeEditorOptions" ng-model="code"></ui-codemirror>
+    <ui-codemirror ui-codemirror-opts="testEditorOptions" ng-model="testCode"></ui-codemirror>
+    <input class="btn btn-primary" type="submit" ng-click="submit(testCode)"></input>
   </div>
-    <script> 
-      var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("repl"), {lineNumbers: true, mode: "javascript"}); 
-      myCodeMirror.getDoc().setValue("function foo(){\n  return 'bar';\n}");
-    </script>
-    <script> var myCodeMirror2 = CodeMirror.fromTextArea(document.getElementById("repl2"), {lineNumbers: true}); 
-      myCodeMirror2.getDoc().setValue("var assert = require('assert');\n\ndescribe('foo', function(){\n  it ('should return bar', function(){\n    assert.deepEqual(foo(), 'bar');\n  });\n});");
-    </script>
 </body>
 </html>
