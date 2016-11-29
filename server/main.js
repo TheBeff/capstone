@@ -1,4 +1,4 @@
-const server = require('http').createServer(require('../app.js'));
+const server = require('http').createServer(require('./app'));
 
 var PORT = process.env.PORT || 1337;
 
