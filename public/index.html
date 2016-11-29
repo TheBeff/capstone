@@ -22,7 +22,13 @@
       <ui-codemirror ui-codemirror-opts="testEditorOptions" ng-model="testCode"></ui-codemirror>
       <br clear="all">
     </div>
-    <input class="btn btn-primary" type="submit" ng-click="submit(testCode)"></input>
+    <input class="btn btn-primary" type="submit" ng-click="submit(code, testCode)"></input>
+    <br>
+    <h2>Output:</h2>
+    <div class = "well">
+      <p ng-repeat='piece in response track by $index'>{{piece}}</p>
+      <!-- {{response}} -->
+    </div>
   </div>
 </body>
 </html>
